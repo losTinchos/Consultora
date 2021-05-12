@@ -54,6 +54,7 @@ $query = mysqli_query($con, $sql);
                             <td><?php echo $row['mail'] ?></td>
                             <td><?php echo $row['fecha'] ?></td>
                             <td><?php echo $row['tema'] ?></td>
+                            
                         </tr>
                         <?php
                         }
