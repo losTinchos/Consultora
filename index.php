@@ -22,7 +22,7 @@ $query = mysqli_query($con, $sql);
 <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9c16a; width:100%">
     <div class="container-fluid">
-        <a class="navbar-brand" id="titulo" href="#">Consultoria Tinchos</a>
+        <a class="navbar-brand fw-bold" id="titulo" href="#">Consultoria Tinchos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,18 +47,19 @@ $query = mysqli_query($con, $sql);
                     <fieldset>
                     <legend>Introduzca sus datos para concertar una cita:</legend>
                     <input style="display: none;" type="text" class="form-control mb-3"  name="id" placeholder="Id">
-                    <label for="fname">Nombre:</label>
-                    <input type="text" class="form-control mb-3" name="nombre"> <br>
-                    <label for="lname">Mail:</label>
-                    <input type="text" class="form-control mb-3"  name="mail" placeholder=""><br>
+                    <label for="fname" id="titulo">Nombre:</label>
+                    <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="nombre"> <br>
+                    <label for="lname" id="titulo">Mail:</label>
+                    <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="mail" placeholder=""><br>
                     <input style="display: none;" type="text" class="form-control mb-3"  name="fecha" placeholder="fecha"><br>
-                    <label for="disabledSelect" >Tema:</label>
-                    <select id="disabledSelect" type="text" class="form-control mb-3" name="tema" class="form-select">
-                    <option>Selecciona el tema</option>
-                    <option>Test</option>
-                    <option>bootstrap</option>
-                    <option>MVC</option>
-                    <input type="submit" value="Submit">
+                    <label for="disabledSelect" id="titulo">Tema:</label>
+                    <select id="disabledSelect" type="text" class="form-control mb-3" style="background-color:#d3c199;" name="tema" class="form-select">
+                    <option style="background-color:#a2d5d8;">Selecciona el tema</option>
+                    <option style="background-color:#a2d5d8;">Test</option>
+                    <option style="background-color:#a2d5d8;">bootstrap</option>
+                    <option style="background-color:#a2d5d8;">MVC</option>
+                    <option style="background-color:#a2d5d8;">Otros</option>
+                    <input class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Enviar">
                 </fieldset>
             </form> 
             </div>
@@ -82,7 +83,8 @@ $query = mysqli_query($con, $sql);
                             <td><?php echo $row['mail'] ?></td>
                             <td><?php echo $row['fecha'] ?></td>
                             <td><?php echo $row['tema'] ?></td>
-                            
+                            <td><a href="./src/actualizar.php?id=<?php echo $row['id'] ?>" class="btn btn" style="background-color:#a2d5d8;">✏️</a></td>
+                            <td><a href="./src/delete.php?id=<?php echo $row['id'] ?>" class="btn btn" style="background-color:#e9c16a;">❌</a></td>
                         </tr>
                         <?php
                         }

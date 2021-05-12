@@ -13,7 +13,7 @@
     $query = mysqli_query($con, $sql);
 
     if($query){
-        Header("Location: index.php");
+        Header("Location: http://localhost/Consultora/index.php");
     }
 
 ?>
