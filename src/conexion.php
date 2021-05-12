@@ -1,22 +1,25 @@
 <?php
  
- 
-function conectar() 
-{
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-
-    $bd = "consultoria";
-
-    $con = mysqli_connect($host, $user, $pass);
-
-    mysqli_select_db($con, $bd);
+  class Conexion{
+      
+    public static function conectar() 
+    {
+        $dbs = 'mysql:dbname=consultoria;host=localhost';
+        $user = 'root';
+        $pass = '';
     
-    return $con;
+        try {
+            $base= new PDO($dbs, $user, $pass);
+            echo "Conexion Exitosa <br>";
+            return $base;
+        } catch (PDOException $e) {
+            echo 'Falló la conexion: ' . $e->getMessage();
+        }
+        
+                  
+    }
 
 }
 
 
-
-?>
+?> 

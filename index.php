@@ -1,9 +1,11 @@
 <?php
-include("./src/conexion.php");
-$con = conectar();
 
-$sql = "SELECT * FROM coders";
-$query = mysqli_query($con, $sql);
+
+require_once "./src/conexion.php";
+$stmt = Conexion::conectar();
+
+ $base = "SELECT * FROM coders";
+ $query = PDO ($stmt, $base);
 
 
 ?>

@@ -2,7 +2,7 @@
 
 include('../src/conexion.php');
 
-$con = conectar();
+$stmt = Conexion::conectar();
 
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
@@ -11,9 +11,9 @@ $fecha = $_POST["fecha"];
 $tema = $_POST["tema"];
 
 
-$sql = "INSERT INTO coders VALUES ('$id', '$nombre', '$mail', '$fecha', '$tema')";
+$base = "INSERT INTO coders VALUES ('$id', '$nombre', '$mail', '$fecha', '$tema')";
 
-$query = mysqli_query($con, $sql);
+$query = PDO($stmt, $base);
 
 if($query){
     Header("Location: http://localhost/Consultora/index.php");
