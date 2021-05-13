@@ -4,8 +4,8 @@
 require_once "./src/conexion.php";
 $stmt = Conexion::conectar();
 
- $base = "SELECT * FROM coders";
- $query = PDO ($stmt, $base);
+//  $base = "SELECT * FROM coders";
+//  $query = PDO ($stmt, $base);
 
 
 ?>
