@@ -4,14 +4,13 @@ include('../src/conexion.php');
 
 $con = conectar();
 
-$id = $_POST["id"];
+
 $nombre = $_POST["nombre"];
 $mail = $_POST["mail"];
-$fecha = $_POST["fecha"];
 $tema = $_POST["tema"];
 
 
-$sql = "INSERT INTO coders VALUES ('$id', '$nombre', '$mail', '$fecha', '$tema')";
+$sql = "INSERT INTO coders (nombre, mail, tema) VALUES ('$nombre', '$mail', '$tema')";
 
 $query = mysqli_query($con, $sql);
 
