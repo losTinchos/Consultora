@@ -1,8 +1,9 @@
 <?php
 
+use App\Database;
 
-require_once "./src/conexion.php";
-$stmt = Conexion::conectar();
+require_once "./src/database.php";
+// $stmt = Database;
 
 //  $base = "SELECT * FROM coders";
 //  $query = PDO ($stmt, $base);

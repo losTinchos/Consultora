@@ -49,8 +49,8 @@ class StudentController
         $student = new Student();
         $students = $student->all();
 
-        new View("StudentsList", [
-            "students" => $students,
+        new View("consultoria", [
+            "coders" => $students,
         ]);
     }
 
@@ -92,7 +92,7 @@ class StudentController
         // Update Student By ID
         $studentHelper = new Student();
         $student = $studentHelper->findById($id);
-        $student->rename($request["name"]);
+        $student->rename($request["nombre"]);
         $student->update();
         // Return to Viwe List
         $this->index();
