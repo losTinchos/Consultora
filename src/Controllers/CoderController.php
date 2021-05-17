@@ -3,11 +3,11 @@
 namespace App\Controllers;
 
 use App\Core\View;
-use App\Database;
-use App\Models\Student;
+use App\Models\Coder;
 use phpDocumentor\Reflection\Location;
 
-class StudentController
+
+class CoderController
 {
 
     public function __construct()
@@ -46,13 +46,18 @@ class StudentController
     public function index(): void
     {
 
-        $student = new Student();
-        $students = $student->all();
+        $coder = new Coder();
+        $coderList = $coder->all();
 
-        new View("consultoria", [
-            "coders" => $students,
-        ]);
-    }
+        require_once("./src/Views/listaCoders.php");
+
+        }
+       
+
+        // new View("consultoria", [
+        //     "coders" => $coderList,
+        // ]);
+    
 
     public function create(): void
     {
@@ -63,7 +68,7 @@ class StudentController
     public function store(array $request): void
     {
 
-        $newStudent = new Student($request["name"]);
+        $newStudent = new Coder ($request["nombre"]);
         $newStudent->save();
 
         $this->index();
@@ -71,8 +76,8 @@ class StudentController
 
     public function delete($id)
     {
-        $studentHelper = new Student();
-        $student = $studentHelper->findById($id);
+        $studentHelper = new Coder();
+        $student = $coderHelper->findById($id);
         $student->delete();
 
         $this->index();
@@ -81,19 +86,19 @@ class StudentController
     public function edit($id)
     {
         //Find Student By Id
-        $studentHelper = new Student();
+        $studentHelper = new coder();
         $student = $studentHelper->findById($id);
         //Execute view with student atributes
-        new View("EditStudent", ["student" => $student]);
+        new View("Editcoder", ["coder" => $coder]);
     }
 
     public function update(array $request, $id)
     {
         // Update Student By ID
-        $studentHelper = new Student();
-        $student = $studentHelper->findById($id);
-        $student->rename($request["nombre"]);
-        $student->update();
+        $coderHelper = new coder();
+        $coder = $coderHelper->findById($id);
+        $coder->rename($request["nombre"]);
+        $coder->update();
         // Return to Viwe List
         $this->index();
     }
