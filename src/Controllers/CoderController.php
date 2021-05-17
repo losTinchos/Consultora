@@ -61,15 +61,14 @@ class CoderController
 
     public function create(): void
     {
-        echo 'Aqui tendremos el Formulario para crear';
-        // new View("CreateStudent");
+        require_once("./src/Views/listaCoders.php");
     }
 
     public function store(array $request): void
     {
 
-        $newStudent = new Coder ($request["nombre"]);
-        $newStudent->save();
+        $newCoder = new Coder ($request["nombre"]);
+        $newCoder->save();
 
         $this->index();
     }
