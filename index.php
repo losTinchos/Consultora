@@ -80,9 +80,9 @@ $query = mysqli_query($con, $sql);
                         <tr>
                             <td><?php echo $row['id'] ?></td>
                             <td><?php echo $row['nombre'] ?></td>
-                            <td><?php echo $row['mail'] ?></td>
+                            <td><?php echo $row['mail'] ?></td>''
                             <td><?php echo $row['fecha'] ?></td>
-                            <td><?php echo $row['tema'] ?></td>
+                            <td><?php echo $row['tema'] ?></td>''
                             <td><a href="./src/actualizar.php?id=<?php echo $row['id'] ?>" class="btn btn" style="background-color:#a2d5d8;">✏️</a></td>
                             <td><a href="./src/delete.php?id=<?php echo $row['id'] ?>" class="btn btn" style="background-color:#e9c16a;">❌</a></td>
                         </tr>
