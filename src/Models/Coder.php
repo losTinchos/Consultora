@@ -49,9 +49,10 @@ class Coder
         $this->database->mysql->query("INSERT INTO `{$this->table}` (`nombre`) VALUES ('$this->nombre');");
     }
 
-    public function all()
+    public static function all()
     {
-        $query = $this->database->mysql->query("select * FROM {$this->table}");
+        $database = new Database();
+        $query = $database->mysql->query("select * FROM coders");
         $coderArray = $query->fetchAll();
         $coderList = [];
         foreach ($coderArray as $coder) {
@@ -72,12 +73,13 @@ class Coder
         $query = $this->database->mysql->query("DELETE FROM `coders` WHERE `coders`.`id` = {$this->id}");
     }
 
-    public function findById($id)
+    public static function findById($id): Coder
     {
-        $query = $this->database->mysql->query("SELECT * FROM `coders` WHERE `id` = {$id}");
+        $database = new Database();
+        $query = $database->mysql->query("SELECT * FROM `coders` WHERE `id` = {$id}");
         $result = $query->fetchAll();
 
-        return new Coder($result[0]["nombres"], $result[0]["id"], $result[0]["fecha"], $result[0]["tema"]);
+        return new Coder($result[0]["nombre"], $result[0]["id"], $result[0]["fecha"], $result[0]["tema"]);
     }
 
     public function UpdateById($data, $id)

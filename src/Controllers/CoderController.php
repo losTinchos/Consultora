@@ -75,30 +75,26 @@ class CoderController
 
     public function delete($id)
     {
-        $studentHelper = new Coder();
-        $student = $coderHelper->findById($id);
-        $student->delete();
+        $coderHelper = new Coder();
+        $coder = $coderHelper->findById($id);
+        $coder->delete();
 
         $this->index();
     }
 
     public function edit($id)
     {
-        //Find Student By Id
-        $studentHelper = new coder();
-        $student = $studentHelper->findById($id);
-        //Execute view with student atributes
-        new View("Editcoder", ["coder" => $coder]);
+       
+        $coderToEdit = Coder::findById($id);
+        new View("EditCoder", ["coder" => $coderToEdit]);
     }
 
     public function update(array $request, $id)
     {
-        // Update Student By ID
-        $coderHelper = new coder();
-        $coder = $coderHelper->findById($id);
-        $coder->rename($request["nombre"]);
-        $coder->update();
-        // Return to Viwe List
+        $coderToUpdate = Coder::findById($id);
+        $coderToUpdate->rename($request["nombre"]);
+        $coderToUpdate->update();
+
         $this->index();
     }
 }

@@ -1,16 +1,13 @@
 <?php
 require_once("./src/Views/Components/Layout.php");
 
-namespace App\Controllers;
-
-use App\Views;
 ?>
 
 
 <body>
 
 <?php
-require_once("./src/Views/Components/Header.php");
+require_once("Components/Header.php");
 ?>
 
 <div class="container mt-5">
@@ -27,22 +24,29 @@ require_once("./src/Views/Components/Header.php");
                     </thead>
                     <tbody>
                         <?php foreach ($coderList as $coder) { 
-                            ?>
+                            echo "
+                            
                         <tr>
-                            <td><?php echo $coder->getId() ?></td>
-                            <td><?php echo $coder->getName() ?></td>
-                            <td><?php echo $coder->getDate() ?></td>
-                            <td><?php echo $coder->getTema() ?></td>
-                            <td><a href="./src/actualizar.php?id=" class="btn btn" style="background-color:#a2d5d8;">✏️</a></td>
-                            <td><a href="./src/delete.php?id=" class="btn btn" style="background-color:#e9c16a;">❌</a></td>
+                            <td>{$coder->getId()}</td>
+                            <td>{$coder->getName()}</td>
+                            <td>{$coder->getDate()}</td>
+                            <td>{$coder->getTema()}</td>
+                            <td>
+                            <a href='?action=edit&id={$coder->getId()}'>✏️</a>
+                            <a href='?action=delete&id={$coder->getId()}'>❌</a>
+                            </td>
                         </tr>
-                        <?php
-                        }
-                        ?>
+                        ";
+                                                
+                        } ?>
                         
+
+                         <!-- <td><a href="./src/actualizar.php?id=" class="btn btn" style="background-color:#a2d5d8;">✏️</a></td>
+                            <td><a href="./src/delete.php?id=" class="btn btn" style="background-color:#e9c16a;"></a></td>  -->
+
                     </tbody>
                 </table>
-                <input href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Crear Cita">
+                <a href="./src/Views/CreateCoder.php" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Crear Cita">Crear cita</a>
             </div>
         </div>
 </div>
