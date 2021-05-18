@@ -36,23 +36,13 @@ require_once("Components/Header.php");
                             <a href='?action=delete&id={$coder->getId()}'>❌</a>
                             </td>
                         </tr>
-                        ";
-                                                
+                        ";                     
                         } ?>
-                        
-
-                         <!-- <td><a href="./src/actualizar.php?id=" class="btn btn" style="background-color:#a2d5d8;">✏️</a></td>
-                            <td><a href="./src/delete.php?id=" class="btn btn" style="background-color:#e9c16a;"></a></td>  -->
-
                     </tbody>
-                </table>
-                <a href="./src/Views/CreateCoder.php" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Crear Cita">Crear cita</a>
+                </table> 
+                <a href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Crear Cita">Crear cita</a>
             </div>
         </div>
 </div>
-
-    
-
-
 </body>
 </html>

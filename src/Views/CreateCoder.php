@@ -1,30 +1,26 @@
 <?php
 
-require_once("./Components/Layout.php")
+require_once("Components/Layout.php");
 
 ?>
 
 <body>
     <?php
-        require_once("./Components/Header.php");
+        require_once("Components/Header.php");
     ?>
 
-<div class="col-md-4">
-    <form action='?action=store' method="POST">
+<div class="col-md-4 m-5">
+    <form action='?action=store' method="post">
         <fieldset>
             <legend>Introduzca sus datos para concertar una cita:</legend>
             <input style="display: none;" type="text" class="form-control mb-3" name="id" placeholder="Id">
             <label for="fname" id="titulo">Nombre:</label>
             <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="nombre"> <br>
             <input style="display: none;" type="text" class="form-control mb-3" name="fecha" placeholder="fecha"><br>
-            <label for="disabledSelect" id="titulo">Tema:</label>
-            <select id="disabledSelect" type="text" class="form-control mb-3" style="background-color:#d3c199;" name="tema" class="form-select">
-                <option style="background-color:#a2d5d8;">Selecciona el tema</option>
-                <option style="background-color:#a2d5d8;">Test</option>
-                <option style="background-color:#a2d5d8;">bootstrap</option>
-                <option style="background-color:#a2d5d8;">MVC</option>
-                <option style="background-color:#a2d5d8;">Otros</option>
+            <label for="fname" id="titulo">Tema:</label>
+            <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="tema">
                 <input href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Enviar">
+                <input class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="reset" value="Reset">
         </fieldset>
     </form>
 </div>

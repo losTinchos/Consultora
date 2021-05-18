@@ -49,9 +49,10 @@ class CoderController
         $coder = new Coder();
         $coderList = $coder->all();
 
-        require_once("./src/Views/listaCoders.php");
-
-        }
+    
+    require_once("./src/Views/listaCoders.php");
+    }
+        
        
 
         // new View("consultoria", [
@@ -61,13 +62,13 @@ class CoderController
 
     public function create(): void
     {
-        require_once("./src/Views/listaCoders.php");
+        require_once("./src/Views/CreateCoder.php");
     }
 
     public function store(array $request): void
     {
 
-        $newCoder = new Coder ($request["nombre"]);
+        $newCoder = new Coder ($request["nombre"], $request["tema"]);
         $newCoder->save();
 
         $this->index();
@@ -84,16 +85,16 @@ class CoderController
 
     public function edit($id)
     {
-       
         $coderToEdit = Coder::findById($id);
         new View("EditCoder", ["coder" => $coderToEdit]);
     }
 
     public function update(array $request, $id)
     {
-        $coderToUpdate = Coder::findById($id);
-        $coderToUpdate->rename($request["nombre"]);
-        $coderToUpdate->update();
+        $coderEnviar = new Coder($id);
+        $coderToUpdate = $coderEnviar->findById($id);
+        $coderToUpdate->rename($request["nombre"], $request["tema"]);
+        $coderToUpdate->update($id);
 
         $this->index();
     }
