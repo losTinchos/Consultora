@@ -22,3 +22,4 @@ Aplica las siguientes normas:
 - Devuelve FizzBuzz si el número es divisible por 3 y por 5.
 - Devuelve el mismo número si no se cumple nada de lo anterior.
 
+# consultoria-tinchos
