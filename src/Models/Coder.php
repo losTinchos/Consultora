@@ -97,21 +97,7 @@ class Coder
         $this->database->mysql->query("UPDATE `coders` SET `nombre`='{$this->nombre}', `tema`='{$this->tema}' WHERE `coders`.`id` = '{$this->id}'");
     }
 
-    public function DoneConsulta ()
-    {
-        $query = $this->database->mysql->query("select * FROM coders WHERE hecho = 1");
-     
-        $listaTerminada = [];
-
-            foreach ($query as $coder) {
-                $itemCoder = new Coder($coder["nombre"], $coder["tema"], $coder["id"], $coder["fecha"]);
-                array_push($listaTerminada, $itemCoder);
-            }
-            
-        Logger::log("get", "listaTerminada");
-         
-        return $listaTerminada;
-    }
+    
     
     
 }
