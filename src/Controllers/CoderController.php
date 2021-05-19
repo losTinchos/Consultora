@@ -4,7 +4,8 @@ namespace App\Controllers;
 
 use App\Core\View;
 use App\Models\Coder;
-use phpDocumentor\Reflection\Location;
+require_once("./src/Logger/Logger.php");
+
 
 
 class CoderController
@@ -54,12 +55,6 @@ class CoderController
     }
         
        
-
-        // new View("consultoria", [
-        //     "coders" => $coderList,
-        // ]);
-    
-
     public function create(): void
     {
         require_once("./src/Views/CreateCoder.php");
@@ -98,4 +93,7 @@ class CoderController
 
         $this->index();
     }
+
+     
 }
+

@@ -1,23 +1,14 @@
 <?php 
-namespace App\Logger;
 
 
-class Logger 
-{
+if(isset($_POST['nombre']) && isset($_POST['tema'])){
 
-    public static function log ($action = '', $message = '', $data = null)
-    {
-        $data = json_encode($data);
-        $time = date("d/m/Y H:i:s");
-        $fileToLog = fopen("src/Logger/test.log", "a");
-        fwrite($fileToLog, "\n");
-        fwrite($fileToLog, "LOG\r\n");
-        fwrite($fileToLog, "TIME: {$time}\r\n");
-        fwrite($fileToLog, "ACTION: {$action} \r\n");
-        fwrite($fileToLog, "MESSAGE: {$message}\r\n");
-        fwrite($fileToLog, "DATA: {$data}\r\n");
-        fwrite($fileToLog, "=================================");
-        fclose($fileToLog);
+    $logFile = fopen("log.txt", 'a') or die("Error creando archivo");
+    
+    fwrite($logFile, "\n".date("d/m/Y H:i:s"). " {$_POST['nombre']}" . " ha hecho una consulta: " . $_POST['tema']) or die("Error escribiendo en el archivo");
+    
+    fclose($logFile);
+    
     }
-}
+    
 
