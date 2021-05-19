@@ -1,10 +1,7 @@
 <?php
-include("./src/conexion.php");
-$con = conectar();
 
-$sql = "SELECT * FROM coders";
-$query = mysqli_query($con, $sql);
-
+require_once("./vendor/autoload.php");
+require_once("./src/index.php");
 
 ?>
 
