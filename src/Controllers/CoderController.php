@@ -54,7 +54,6 @@ class CoderController
     require_once("./src/Views/listaCoders.php");
     }
         
-       
     public function create(): void
     {
         require_once("./src/Views/CreateCoder.php");
@@ -93,7 +92,9 @@ class CoderController
 
         $this->index();
     }
-
-     
+    public function reset()
+    {
+        require_once("./src/Views/ListaCoders.php");
+    }
 }
 

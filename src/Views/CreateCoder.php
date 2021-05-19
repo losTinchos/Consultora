@@ -21,7 +21,7 @@ require_once("Components/Layout.php");
             <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="tema">
                 <input href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Enviar">
                 <input class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="reset" value="Reset">
-        </fieldset>
+            </fieldset>
     </form>
+    <?php echo "<a href=\"index.php\">Vuelve a la lista</a>"; ?>
 </div>
-</body>

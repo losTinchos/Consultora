@@ -15,14 +15,6 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link active" id="titulo" aria-current="page" href="#">Can Tinchos</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" id="titulo" href="#">Sobre Nosotros</a>
-            </li>
-        </ul>
         </div>
     </div>
     </nav>
