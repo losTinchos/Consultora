@@ -3,13 +3,13 @@ require_once("./src/Views/Components/Layout.php");
 
 ?>
 
-<body>
+<body style="background-color: #F9F1BC;">
 
 <?php require_once("Components/Header.php"); ?>
 
-<div class="container mt-5 text-center">
-    <div class="row">
-        <div class="col-md-8">
+<div class="container mt-5 p-4 d-flex justify-content-center " style="background-color: #FCCE78;">
+    <div class="row-1 d-flex justify-content-center">
+        <div class="col-md-9">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
