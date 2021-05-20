@@ -67,7 +67,6 @@ class Coder
         return $coderList;
     }
 
-
     public function deleteById($id)
     {
         $query = $this->database->mysql->query("DELETE FROM `coders` WHERE `coders`.`id` = {$id}");
@@ -96,13 +95,4 @@ class Coder
     {
         $this->database->mysql->query("UPDATE `coders` SET `nombre`='{$this->nombre}', `tema`='{$this->tema}' WHERE `coders`.`id` = '{$this->id}'");
     }
-
-    
-    
-    
 }
-
-
-
-
-

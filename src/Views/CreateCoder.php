@@ -5,11 +5,9 @@ require_once("Components/Layout.php");
 ?>
 
 <body>
-    <?php
-        require_once("Components/Header.php");
-    ?>
+    <?php require_once("Components/Header.php"); ?>
 
-<div class="col-md-4 m-5">
+<div class="col-md-4 m-5 text-center">
     <form action='?action=store' method="post">
         <fieldset>
             <legend>Introduzca sus datos para concertar una cita:</legend>
@@ -21,7 +19,8 @@ require_once("Components/Layout.php");
             <input type="text" class="form-control mb-3" style="background-color:#d3c199;" name="tema">
                 <input href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Enviar">
                 <input class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="reset" value="Reset">
-            </fieldset>
+        </fieldset>
     </form>
-    <?php echo "<a href=\"index.php\">Vuelve a la lista</a>"; ?>
+    <a href="index.php"><button class="btn btn-outline-dark shadow rounded mt-2" style="background-color:#e9c16a;" type="button">Volver</button></a>
+    
 </div>

@@ -6,14 +6,11 @@ use App\Core\View;
 use App\Models\Coder;
 require_once("./src/Logger/Logger.php");
 
-
-
 class CoderController
 {
 
     public function __construct()
     {
-
 
         if (isset($_GET["action"]) && ($_GET["action"] == "create")) {
             $this->create();
@@ -50,10 +47,9 @@ class CoderController
         $coder = new Coder();
         $coderList = $coder->all();
 
-    
     require_once("./src/Views/listaCoders.php");
     }
-        
+
     public function create(): void
     {
         require_once("./src/Views/CreateCoder.php");
@@ -61,7 +57,6 @@ class CoderController
 
     public function store(array $request): void
     {
-
         $newCoder = new Coder ($request["nombre"], $request["tema"]);
         $newCoder->save();
 
@@ -97,4 +92,3 @@ class CoderController
         require_once("./src/Views/ListaCoders.php");
     }
 }
-

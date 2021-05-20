@@ -3,7 +3,6 @@ namespace App;
 use  App\Cliente;
 use  PHPUnit\Framework\TestCase;
 
-
 class ClienteTest extends TestCase 
 {
     public function testClienteTieneIDCuandoSeCrea(){
@@ -12,5 +11,3 @@ class ClienteTest extends TestCase
         $this->assertEquals(1, $result);
     }
 }
-
-
