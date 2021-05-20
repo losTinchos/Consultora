@@ -9,8 +9,10 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e9c16a; width:100%">
+        
         <div class="container-fluid d-flex justify-content-center">
-            <a class="navbar-brand fw-bold" id="titulo" href="#">Consulta con los Tinchos</a>
+        <img src="src\img\avispa-removebg.png" alt="" width="53px" height="53px">
+        <a class="navbar-brand fw-bold" id="titulo" href="#">Consulta con los Tinchos</a>
         </div>
         </nav>
     </header>

@@ -21,7 +21,7 @@ require_once("Components/Layout.php");
                     <input href="?action=create" class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="submit" value="Enviar">
                     <input class="btn btn-outline-dark shadow rounded" style="background-color:#e9c16a;" type="reset" value="Reset">
             </fieldset>
-            <a href="index.php"><button class="btn btn-outline-dark shadow rounded mt-1 ms-4" style="background-color:#e9c16a;" type="button">Volver</button></a>
+            <a href="index.php"><button class="btn btn-outline-dark shadow rounded mt-1 ms-3" style="background-color:#e9c16a;" type="button">Volver</button></a>
         </form>
     </div>
 </section>
