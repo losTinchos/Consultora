@@ -10,9 +10,9 @@ Desarrollar una aplicación "CRUD" Web en PHP que permita pedir cita a los desar
 - [Martin](https://github.com/martindejos)
 - [Github Los Tincho's](https://github.com/losTinchos)
 ## Pantallas
-<img src=".\src\img\consultora-1.png" >
-<img src=".\src\img\consultora-2.png" >
-<img src=".\src\img\consultora-3.png" >
+<img src="src\img\consultora-1.png" >
+<img src="src\img\consultora-2.png" >
+<img src="src\img\consultora-3.png" >
 
 ## Requisitos Técnicos:
 
